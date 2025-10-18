@@ -1,59 +1,41 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Code2, Server, Database, Cloud, Smartphone, GitBranch } from "lucide-react";
-import { SiReact, SiTypescript, SiNextdotjs, SiTailwindcss, SiRedux, SiNodedotjs, SiExpress, SiPython, SiFastapi, SiPostgresql, SiMongodb, SiRedis, SiPrisma, SiDocker, SiKubernetes, SiTerraform, SiGit } from "react-icons/si";
+import { SiReact, SiTypescript, SiNextdotjs, SiNodedotjs, SiExpress, SiPython, SiFastapi, SiPostgresql, SiMongodb, SiRedis, SiDocker, SiKubernetes, SiGit, SiJavascript } from "react-icons/si";
 
 export function About() {
-  const techIcons: Record<string, any> = {
-    "React": SiReact,
-    "TypeScript": SiTypescript,
-    "Next.js": SiNextdotjs,
-    "Tailwind CSS": SiTailwindcss,
-    "Redux": SiRedux,
-    "Node.js": SiNodedotjs,
-    "Express": SiExpress,
-    "Python": SiPython,
-    "FastAPI": SiFastapi,
-    "PostgreSQL": SiPostgresql,
-    "MongoDB": SiMongodb,
-    "Redis": SiRedis,
-    "Prisma": SiPrisma,
-    "Docker": SiDocker,
-    "Kubernetes": SiKubernetes,
-    "Terraform": SiTerraform,
-    "Git": SiGit,
-  };
-
-  const skills = [
+  const techStack = [
     {
-      category: "Frontend",
-      icon: Code2,
-      items: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Redux"],
+      category: "Programming Languages",
+      techs: [
+        { name: "Python", icon: SiPython },
+        { name: "JavaScript", icon: SiJavascript },
+        { name: "TypeScript", icon: SiTypescript },
+      ],
     },
     {
-      category: "Backend",
-      icon: Server,
-      items: ["Node.js", "Express", "Python", "FastAPI", "REST APIs"],
+      category: "Frameworks & Libraries",
+      techs: [
+        { name: "React", icon: SiReact },
+        { name: "Next.js", icon: SiNextdotjs },
+        { name: "Node.js", icon: SiNodedotjs },
+        { name: "Express", icon: SiExpress },
+        { name: "FastAPI", icon: SiFastapi },
+      ],
     },
     {
-      category: "Database",
-      icon: Database,
-      items: ["PostgreSQL", "MongoDB", "Redis", "Prisma", "Drizzle"],
+      category: "DevOps & Tools",
+      techs: [
+        { name: "Docker", icon: SiDocker },
+        { name: "Kubernetes", icon: SiKubernetes },
+        { name: "Git", icon: SiGit },
+      ],
     },
     {
-      category: "Cloud & DevOps",
-      icon: Cloud,
-      items: ["AWS", "Docker", "Kubernetes", "CI/CD", "Terraform"],
-    },
-    {
-      category: "Mobile",
-      icon: Smartphone,
-      items: ["React Native", "Expo", "iOS", "Android", "PWA"],
-    },
-    {
-      category: "Tools & Practices",
-      icon: GitBranch,
-      items: ["Git", "Agile", "TDD", "Microservices", "System Design"],
+      category: "Databases",
+      techs: [
+        { name: "PostgreSQL", icon: SiPostgresql },
+        { name: "MongoDB", icon: SiMongodb },
+        { name: "Redis", icon: SiRedis },
+      ],
     },
   ];
 
@@ -70,42 +52,33 @@ export function About() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skills.map((skillGroup) => (
-            <Card
-              key={skillGroup.category}
-              className="hover-elevate"
-              data-testid={`card-skill-${skillGroup.category.toLowerCase().replace(/\s+/g, "-")}`}
-            >
-              <CardContent className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 rounded-md bg-primary/10">
-                    <skillGroup.icon className="w-5 h-5 text-primary" />
+        <div className="space-y-12">
+          {techStack.map((category) => (
+            <div key={category.category}>
+              <h3 className="text-xl font-semibold text-center mb-8 text-muted-foreground">
+                {category.category}
+              </h3>
+              <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+                {category.techs.map((tech) => (
+                  <div
+                    key={tech.name}
+                    className="flex flex-col items-center gap-3 hover-elevate rounded-lg p-4"
+                    data-testid={`tech-${tech.name.toLowerCase().replace(/\s+/g, "-")}`}
+                  >
+                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-primary/20 bg-card flex items-center justify-center hover:border-primary/40 transition-colors">
+                      <tech.icon className="w-10 h-10 md:w-12 md:h-12 text-primary" />
+                    </div>
+                    <span className="text-sm font-medium text-muted-foreground">
+                      {tech.name}
+                    </span>
                   </div>
-                  <h3 className="text-lg font-semibold">{skillGroup.category}</h3>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {skillGroup.items.map((skill) => {
-                    const IconComponent = techIcons[skill];
-                    return (
-                      <Badge
-                        key={skill}
-                        variant="secondary"
-                        className="text-xs gap-1.5"
-                        data-testid={`badge-skill-${skill.toLowerCase().replace(/\s+/g, "-")}`}
-                      >
-                        {IconComponent && <IconComponent className="w-3 h-3" />}
-                        {skill}
-                      </Badge>
-                    );
-                  })}
-                </div>
-              </CardContent>
-            </Card>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
 
-        <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div>
             <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="text-years-experience">
               5+
