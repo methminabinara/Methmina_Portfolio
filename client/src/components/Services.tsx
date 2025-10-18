@@ -9,12 +9,12 @@ export function Services() {
       description:
         "Custom web applications built with modern frameworks like React, Next.js, and Node.js. Focus on performance, scalability, and user experience.",
     },
-    {
-      icon: Smartphone,
-      title: "Mobile Development",
-      description:
-        "Cross-platform mobile applications using React Native and Expo. Native iOS and Android development for high-performance requirements.",
-    },
+    // {
+    //   icon: Smartphone,
+    //   title: "Mobile Development",
+    //   description:
+    //     "Cross-platform mobile applications using React Native and Expo. Native iOS and Android development for high-performance requirements.",
+    // },
     {
       icon: Cloud,
       title: "Cloud Solutions",
@@ -33,12 +33,12 @@ export function Services() {
       description:
         "User-centered design with modern interfaces. Responsive layouts, accessibility compliance, and seamless user experiences across devices.",
     },
-    {
-      icon: Wrench,
-      title: "DevOps & CI/CD",
-      description:
-        "Automated deployment pipelines, infrastructure as code, monitoring solutions, and performance optimization for production environments.",
-    },
+    // {
+    //   icon: Wrench,
+    //   title: "DevOps & CI/CD",
+    //   description:
+    //     "Automated deployment pipelines, infrastructure as code, monitoring solutions, and performance optimization for production environments.",
+    // },
   ];
 
   return (

@@ -1,14 +1,18 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { SiReact, SiTypescript, SiNextdotjs, SiNodedotjs, SiExpress, SiPython, SiFastapi, SiPostgresql, SiMongodb, SiRedis, SiDocker, SiKubernetes, SiGit, SiJavascript } from "react-icons/si";
+import { SiReact, SiTypescript, SiOpenjdk, SiNextdotjs, SiNodedotjs, SiExpress, SiPython, SiFastapi, SiPostgresql, SiMongodb, SiRedis, SiDocker, SiKubernetes, SiGit, SiJavascript, SiC, SiHtml5, SiTailwindcss, SiMysql } from "react-icons/si";
+import { FaJava } from "react-icons/fa";
 
 export function About() {
   const techStack = [
     {
       category: "Programming Languages",
       techs: [
-        { name: "Python", icon: SiPython },
         { name: "JavaScript", icon: SiJavascript },
         { name: "TypeScript", icon: SiTypescript },
+        { name: "Python", icon: SiPython },
+        { name: "Java", icon: FaJava },
+        { name: "C", icon: SiC },
+        { name: "HTML/CSS", icon: SiHtml5 },
       ],
     },
     {
@@ -18,14 +22,14 @@ export function About() {
         { name: "Next.js", icon: SiNextdotjs },
         { name: "Node.js", icon: SiNodedotjs },
         { name: "Express", icon: SiExpress },
-        { name: "FastAPI", icon: SiFastapi },
+        { name: "Tailwind CSS", icon: SiTailwindcss },
       ],
     },
     {
       category: "DevOps & Tools",
       techs: [
-        { name: "Docker", icon: SiDocker },
-        { name: "Kubernetes", icon: SiKubernetes },
+        // { name: "Docker", icon: SiDocker },
+        // { name: "Kubernetes", icon: SiKubernetes },
         { name: "Git", icon: SiGit },
       ],
     },
@@ -34,7 +38,7 @@ export function About() {
       techs: [
         { name: "PostgreSQL", icon: SiPostgresql },
         { name: "MongoDB", icon: SiMongodb },
-        { name: "Redis", icon: SiRedis },
+        { name: "MySQL", icon: SiMysql },
       ],
     },
   ];
@@ -45,7 +49,7 @@ export function About() {
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            A dedicated software engineer with 5+ years of experience building
+            A dedicated software engineer with 1+ years of experience building
             enterprise-scale applications. I combine technical expertise with
             creative problem-solving to deliver exceptional user experiences and
             robust backend systems.
@@ -78,7 +82,7 @@ export function About() {
           ))}
         </div>
 
-        <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        {/* <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div>
             <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="text-years-experience">
               5+
@@ -97,7 +101,7 @@ export function About() {
             </div>
             <div className="text-muted-foreground">Clients Served</div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

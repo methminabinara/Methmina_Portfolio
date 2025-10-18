@@ -4,7 +4,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Github, Linkedin, Mail, Download, ArrowDown } from "lucide-react";
 import { SiReact, SiNodedotjs, SiTypescript, SiPython, SiDocker } from "react-icons/si";
 import { Cloud } from "lucide-react";
-import profileImage from "@assets/generated_images/Professional_engineer_headshot_portrait_7ebe8dc1.png";
+import profileImage from "@assets/generated_images/Profile.png";
 
 export function Hero() {
   const techStack = [
@@ -12,7 +12,7 @@ export function Hero() {
     { icon: SiNodedotjs, name: "Node.js" },
     { icon: SiTypescript, name: "TypeScript" },
     { icon: SiPython, name: "Python" },
-    { icon: SiDocker, name: "Docker" },
+    // { icon: SiDocker, name: "Docker" },
     { icon: Cloud, name: "AWS" },
   ];
 
@@ -38,11 +38,11 @@ export function Hero() {
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight">
               <span className="bg-gradient-to-r from-primary via-chart-2 to-primary bg-clip-text text-transparent">
-                Software Engineer
+                Methmina Binara
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
-              Full-Stack Developer & Cloud Solutions Architect
+              Full-Stack Developer
             </p>
             <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
               Passionate about building scalable, high-performance applications
@@ -76,7 +76,9 @@ export function Hero() {
             <Button
               size="lg"
               variant="outline"
-              onClick={() => console.log("Download resume clicked")}
+              onClick={() =>
+                window.open("https://drive.google.com/file/d/1cDsfjE4lTZR0M6dh9uNwP0YmkugRIeR_/view?usp=sharing", "_blank")
+              }
               data-testid="button-download-resume"
             >
               <Download className="w-4 h-4 mr-2" />
@@ -88,7 +90,7 @@ export function Hero() {
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => window.open("https://github.com", "_blank")}
+              onClick={() => window.open("https://github.com/methminabinara", "_blank")}
               data-testid="button-github"
             >
               <Github className="w-5 h-5" />
@@ -96,7 +98,7 @@ export function Hero() {
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => window.open("https://linkedin.com", "_blank")}
+              onClick={() => window.open("https://www.linkedin.com/in/methmina-binara-864999251/", "_blank")}
               data-testid="button-linkedin"
             >
               <Linkedin className="w-5 h-5" />

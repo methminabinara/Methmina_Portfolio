@@ -55,7 +55,7 @@ export function Footer() {
               <Button
                 variant="ghost"
                 size="icon"
-                onClick={() => window.open("https://github.com", "_blank")}
+                onClick={() => window.open("https://github.com/methminabinara", "_blank")}
                 data-testid="button-footer-github"
               >
                 <Github className="w-5 h-5" />
@@ -63,7 +63,7 @@ export function Footer() {
               <Button
                 variant="ghost"
                 size="icon"
-                onClick={() => window.open("https://linkedin.com", "_blank")}
+                onClick={() => window.open("https://www.linkedin.com/in/methmina-binara-864999251/", "_blank")}
                 data-testid="button-footer-linkedin"
               >
                 <Linkedin className="w-5 h-5" />
@@ -82,11 +82,11 @@ export function Footer() {
 
         <div className="pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Software Engineer Portfolio. All rights reserved.
+            © {currentYear} Methmina's Portfolio. All rights reserved.
           </p>
-          <p className="text-sm text-muted-foreground flex items-center gap-1">
+          {/* <p className="text-sm text-muted-foreground flex items-center gap-1">
             Built with <Heart className="w-4 h-4 text-chart-2 fill-chart-2" /> using React
-          </p>
+          </p> */}
         </div>
       </div>
     </footer>

@@ -2,48 +2,58 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
-import projectManagement from "@assets/generated_images/Project_management_dashboard_screenshot_3e5c016c.png";
-import ecommerce from "@assets/generated_images/E-commerce_platform_interface_screenshot_08e08052.png";
-import analytics from "@assets/generated_images/Analytics_dashboard_application_screenshot_3f30d26e.png";
-import chatApp from "@assets/generated_images/Mobile_chat_application_screenshot_5245821f.png";
+import courseFlow from "@assets/generated_images/CourseFlow.png";
+import rathagala from "@assets/generated_images/Rathagala.png";
+import maternyCare from "@assets/generated_images/MaternyCare.png";
+import trafficMonitor from "@assets/generated_images/TrafficMonitor.png";
+import portfolio from "@assets/generated_images/Portfolio.png";
 
 export function Projects() {
   const projects = [
     {
-      title: "Project Management Platform",
+      title: "CourseFlow",
       description:
-        "A comprehensive project management solution with real-time collaboration, task tracking, and team analytics. Built for enterprise teams.",
-      image: projectManagement,
-      tags: ["React", "Node.js", "PostgreSQL", "WebSocket"],
-      github: "https://github.com",
-      demo: "https://demo.com",
+        "CourseFlow is a course management platform for students, teachers, and affiliates to manage courses and track progress.",
+      image: courseFlow,
+      tags: ["Next.js", "Express.js", "PostgreSQL"],
+      github: "https://github.com/iamVihanga/donext-lms",
+      demo: "https://www.courseflow.academy/",
       featured: true,
     },
     {
-      title: "E-Commerce Platform",
+      title: "Rathagala.lk",
       description:
-        "Full-featured online shopping platform with payment integration, inventory management, and customer analytics dashboard.",
-      image: ecommerce,
-      tags: ["Next.js", "Stripe", "MongoDB", "AWS"],
-      github: "https://github.com",
+        "Rathagala.lk is an online vehicle listing platform where users can publish ads, browse available vehicles, and contact sellers directly.",
+      image: rathagala,
+      tags: ["Next.js", "MongoDB"],
+      github: "https://github.com/methminabinara/Rathagala.lk",
+      demo: "https://rathagala-delta.vercel.app/",
+    },
+    {
+      title: "MaternyCare",
+      description:
+        "MaternyCare is a maternal care platform that helps pregnant women track health and access guidance from healthcare professionals.",
+      image: maternyCare,
+      tags: ["React", "Express.js", "PostgreSQL"],
+      github: "https://github.com/Xanvia/MaternyCare",
       demo: "https://demo.com",
     },
     {
-      title: "Analytics Dashboard",
+      title: "Traffic Monitor",
       description:
-        "Real-time business intelligence dashboard with data visualization, custom reports, and predictive analytics capabilities.",
-      image: analytics,
-      tags: ["React", "Python", "FastAPI", "Chart.js"],
-      github: "https://github.com",
+        "Traffic Monitor is a system that tracks and counts vehicles, analyzing traffic flow and providing real-time movement insights.",
+      image: trafficMonitor,
+      tags: ["Python", "OpenCV", "YOLOv8"],
+      github: "https://github.com/methminabinara/TrafficMonitor",
       demo: "https://demo.com",
     },
     {
-      title: "Real-Time Chat Application",
+      title: "Personal Portfolio Website",
       description:
-        "Modern messaging platform with end-to-end encryption, file sharing, video calls, and group chat functionality.",
-      image: chatApp,
-      tags: ["React Native", "WebRTC", "Socket.io", "Redis"],
-      github: "https://github.com",
+        "Personal Portfolio showcasing my projects, skills, and experience as a software engineer, built for performance and responsiveness.",
+      image: portfolio,
+      tags: ["React"],
+      github: "https://github.com/methminabinara/TrafficMonitor",
       demo: "https://demo.com",
     },
   ];
@@ -107,8 +117,9 @@ export function Projects() {
                   data-testid={`button-project-demo-${project.title.toLowerCase().replace(/\s+/g, "-")}`}
                 >
                   <ExternalLink className="w-4 h-4 mr-2" />
-                  Demo
+                  {project.title === "CourseFlow" ? "Live Site" : "Demo"}
                 </Button>
+
               </CardFooter>
             </Card>
           ))}

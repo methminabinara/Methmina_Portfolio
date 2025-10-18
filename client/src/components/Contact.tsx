@@ -9,6 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 
 export function Contact() {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,38 +19,50 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+    
+    // Create mailto link with form data
+    const mailtoLink = `mailto:binaraepa@gmail.com?subject=${encodeURIComponent(
+      formData.subject
+    )}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )}`;
+    
+    // Open default mail client
+    window.location.href = mailtoLink;
+    
     toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
+      title: "Opening your email client...",
+      description: "Your message details have been pre-filled. Just hit send!",
     });
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    
+    setIsSubmitting(false);
   };
 
   const contactInfo = [
     {
       icon: Mail,
       label: "Email",
-      value: "contact@example.com",
-      link: "mailto:contact@example.com",
+      value: "binaraepa@gmail.com",
+      link: "mailto:binaraepa@gmail.com",
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "Galle, Sri Lanka",
       link: null,
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "linkedin.com/in/yourprofile",
-      link: "https://linkedin.com",
+      value: "linkedin.com/in/methmina-binara-864999251",
+      link: "https://www.linkedin.com/in/methmina-binara-864999251/",
     },
     {
       icon: Github,
       label: "GitHub",
-      value: "github.com/yourprofile",
-      link: "https://github.com",
+      value: "github.com/methminabinara",
+      link: "https://github.com/methminabinara",
     },
   ];
 
@@ -80,6 +93,7 @@ export function Contact() {
                           setFormData({ ...formData, name: e.target.value })
                         }
                         required
+                        disabled={isSubmitting}
                         data-testid="input-name"
                       />
                     </div>
@@ -94,6 +108,7 @@ export function Contact() {
                           setFormData({ ...formData, email: e.target.value })
                         }
                         required
+                        disabled={isSubmitting}
                         data-testid="input-email"
                       />
                     </div>
@@ -108,6 +123,7 @@ export function Contact() {
                         setFormData({ ...formData, subject: e.target.value })
                       }
                       required
+                      disabled={isSubmitting}
                       data-testid="input-subject"
                     />
                   </div>
@@ -122,6 +138,7 @@ export function Contact() {
                         setFormData({ ...formData, message: e.target.value })
                       }
                       required
+                      disabled={isSubmitting}
                       data-testid="input-message"
                     />
                   </div>
@@ -129,9 +146,10 @@ export function Contact() {
                     type="submit"
                     size="lg"
                     className="w-full md:w-auto"
+                    disabled={isSubmitting}
                     data-testid="button-submit"
                   >
-                    Send Message
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               </CardContent>

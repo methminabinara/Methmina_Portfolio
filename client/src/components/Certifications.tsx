@@ -2,45 +2,110 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Award, ExternalLink, CheckCircle2 } from "lucide-react";
-import { SiGoogle, SiKubernetes } from "react-icons/si";
+import { SiCoursera, SiHackerrank } from "react-icons/si";
+import { FaAws } from "react-icons/fa6";
 import { Cloud, Server } from "lucide-react";
+import { PiCertificate } from "react-icons/pi";
 
 export function Certifications() {
   const certifications = [
     {
-      name: "AWS Certified Solutions Architect",
+      name: "AWS Educate Introduction to Cloud 101 - Training Badge",
       issuer: "Amazon Web Services",
-      icon: Cloud,
-      date: "2023",
-      credential: "AWS-SA-2023-123456",
-      link: "https://aws.amazon.com/certification/",
+      icon: FaAws,
+      date: "2025",
+      // credential: "AWS-SA-2023-123456",
+      link: "https://www.credly.com/badges/183be4a1-2aa0-4a64-837d-c032f214cd97",
       badgeImage: null,
     },
     {
-      name: "Google Cloud Professional Developer",
-      issuer: "Google Cloud",
-      icon: SiGoogle,
-      date: "2023",
-      credential: "GCP-PD-2023-789012",
-      link: "https://cloud.google.com/certification",
+      name: "AWS Educate Getting Started with Networking - Training Badge",
+      issuer: "Amazon Web Services",
+      icon: FaAws,
+      date: "2025",
+      // credential: "GCP-PD-2023-789012",
+      link: "https://www.credly.com/badges/b449c9bc-cf16-4fd8-8421-f283f48de1aa",
       badgeImage: null,
     },
     {
-      name: "Microsoft Azure Developer Associate",
-      issuer: "Microsoft",
-      icon: Server,
+      name: "AWS Educate Getting Started with Security - Training Badge",
+      issuer: "Amazon Web Services",
+      icon: FaAws,
+      date: "2025",
+      // credential: "GCP-PD-2023-789012",
+      link: "https://www.credly.com/badges/14b94e25-14b3-4693-873d-f16417a3d985",
+      badgeImage: null,
+    },
+    {
+      name: "React (Basic)",
+      issuer: "HackerRank",
+      icon: SiHackerrank ,
+      date: "2024",
+      // credential: "AZ-204-2022-345678",
+      link: "https://www.hackerrank.com/certificates/f54807c979a1",
+      badgeImage: null,
+    },
+    {
+      name: "Introduction to Frontend Development",
+      issuer: "Meta (Coursera)",
+      icon: SiCoursera,
+      date: "2023",
+      // credential: "CKA-2023-901234",
+      link: "https://www.coursera.org/account/accomplishments/verify/M7JL7ERUCU24?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course",
+      badgeImage: null,
+    },
+    {
+      name: "Introduction to Backend Development",
+      issuer: "Meta (Coursera)",
+      icon: SiCoursera,
+      date: "2023",
+      // credential: "CKA-2023-901234",
+      link: "https://www.coursera.org/account/accomplishments/verify/94TTKYEQSB9J?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course",
+      badgeImage: null,
+    },
+    {
+      name: "Fundamentals of DevOps",
+      issuer: "KodeKloud",
+      icon: PiCertificate,
+      date: "2025",
+      // credential: "CKA-2023-901234",
+      link: "https://learn.kodekloud.com/certificate/c8bbf133-31ed-48ad-8ec4-275027f3f4c4",
+      badgeImage: null,
+    },
+    {
+      name: "Get Started with Figma",
+      issuer: "Coursera",
+      icon: SiCoursera,
+      date: "2023",
+      // credential: "CKA-2023-901234",
+      link: "https://www.coursera.org/account/accomplishments/verify/ZWYCBGBUKKW2?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=project",
+      badgeImage: null,
+    },
+    {
+      name: "Car Transport App in Figma",
+      issuer: "Coursera",
+      icon: SiCoursera,
+      date: "2023",
+      // credential: "CKA-2023-901234",
+      link: "https://www.coursera.org/account/accomplishments/verify/CD2ZD7JDHH44?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=project",
+      badgeImage: null,
+    },
+    {
+      name: "Foundations: Data, Data, Everywhere",
+      issuer: "Google (Coursera)",
+      icon: SiCoursera,
       date: "2022",
-      credential: "AZ-204-2022-345678",
-      link: "https://microsoft.com/learn",
+      // credential: "CKA-2023-901234",
+      link: "https://drive.google.com/file/d/1MOPTdr5-xiDYmhwjFautilJJahbmsYX4/view?pli=1",
       badgeImage: null,
     },
     {
-      name: "Certified Kubernetes Administrator",
-      issuer: "Cloud Native Computing Foundation",
-      icon: SiKubernetes,
-      date: "2023",
-      credential: "CKA-2023-901234",
-      link: "https://cncf.io",
+      name: "Artificial Intelligence in Marketing",
+      issuer: "University of Virginia Darden School of Business (Coursera)",
+      icon: SiCoursera,
+      date: "2021",
+      // credential: "CKA-2023-901234",
+      link: "https://drive.google.com/file/d/1XDxw63RtfnANxsk2czfstywrhD5W53D7/view",
       badgeImage: null,
     },
   ];
@@ -68,7 +133,7 @@ export function Certifications() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {certifications.map((cert) => (
             <Card
-              key={cert.credential}
+              // key={cert.credential}
               className="hover-elevate"
               data-testid={`card-cert-${cert.name.toLowerCase().replace(/\s+/g, "-")}`}
             >
@@ -92,9 +157,11 @@ export function Certifications() {
                     <p className="text-sm text-muted-foreground mb-2">
                       {cert.issuer} • {cert.date}
                     </p>
-                    <p className="text-xs font-mono text-muted-foreground mb-3">
-                      {cert.credential}
-                    </p>
+                    {/* {cert.credential && (
+                      <p className="text-xs font-mono text-muted-foreground mb-3">
+                        {cert.credential}
+                      </p>
+                    )} */}
                     <Button
                       variant="outline"
                       size="sm"
@@ -111,7 +178,7 @@ export function Certifications() {
           ))}
         </div>
 
-        <Card>
+        {/* <Card>
           <CardContent className="p-6">
             <div className="flex items-center gap-3 mb-4">
               <Award className="w-6 h-6 text-primary" />
@@ -130,7 +197,7 @@ export function Certifications() {
               ))}
             </div>
           </CardContent>
-        </Card>
+        </Card> */}
       </div>
     </section>
   );
