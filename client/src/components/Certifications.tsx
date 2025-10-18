@@ -14,6 +14,7 @@ export function Certifications() {
       date: "2023",
       credential: "AWS-SA-2023-123456",
       link: "https://aws.amazon.com/certification/",
+      badgeImage: null,
     },
     {
       name: "Google Cloud Professional Developer",
@@ -22,6 +23,7 @@ export function Certifications() {
       date: "2023",
       credential: "GCP-PD-2023-789012",
       link: "https://cloud.google.com/certification",
+      badgeImage: null,
     },
     {
       name: "Microsoft Azure Developer Associate",
@@ -30,6 +32,7 @@ export function Certifications() {
       date: "2022",
       credential: "AZ-204-2022-345678",
       link: "https://microsoft.com/learn",
+      badgeImage: null,
     },
     {
       name: "Certified Kubernetes Administrator",
@@ -38,6 +41,7 @@ export function Certifications() {
       date: "2023",
       credential: "CKA-2023-901234",
       link: "https://cncf.io",
+      badgeImage: null,
     },
   ];
 
@@ -70,9 +74,19 @@ export function Certifications() {
             >
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-md bg-primary/10 flex-shrink-0">
-                    <cert.icon className="w-8 h-8 text-primary" />
-                  </div>
+                  {cert.badgeImage ? (
+                    <div className="w-20 h-20 flex-shrink-0 rounded-md overflow-hidden bg-card border">
+                      <img
+                        src={cert.badgeImage}
+                        alt={`${cert.name} badge`}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  ) : (
+                    <div className="p-3 rounded-md bg-primary/10 flex-shrink-0">
+                      <cert.icon className="w-8 h-8 text-primary" />
+                    </div>
+                  )}
                   <div className="flex-1 min-w-0">
                     <h3 className="text-lg font-semibold mb-1">{cert.name}</h3>
                     <p className="text-sm text-muted-foreground mb-2">

@@ -1,8 +1,29 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Code2, Server, Database, Cloud, Smartphone, GitBranch } from "lucide-react";
+import { SiReact, SiTypescript, SiNextdotjs, SiTailwindcss, SiRedux, SiNodedotjs, SiExpress, SiPython, SiFastapi, SiPostgresql, SiMongodb, SiRedis, SiPrisma, SiDocker, SiKubernetes, SiTerraform, SiGit } from "react-icons/si";
 
 export function About() {
+  const techIcons: Record<string, any> = {
+    "React": SiReact,
+    "TypeScript": SiTypescript,
+    "Next.js": SiNextdotjs,
+    "Tailwind CSS": SiTailwindcss,
+    "Redux": SiRedux,
+    "Node.js": SiNodedotjs,
+    "Express": SiExpress,
+    "Python": SiPython,
+    "FastAPI": SiFastapi,
+    "PostgreSQL": SiPostgresql,
+    "MongoDB": SiMongodb,
+    "Redis": SiRedis,
+    "Prisma": SiPrisma,
+    "Docker": SiDocker,
+    "Kubernetes": SiKubernetes,
+    "Terraform": SiTerraform,
+    "Git": SiGit,
+  };
+
   const skills = [
     {
       category: "Frontend",
@@ -64,16 +85,20 @@ export function About() {
                   <h3 className="text-lg font-semibold">{skillGroup.category}</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {skillGroup.items.map((skill) => (
-                    <Badge
-                      key={skill}
-                      variant="secondary"
-                      className="text-xs"
-                      data-testid={`badge-skill-${skill.toLowerCase().replace(/\s+/g, "-")}`}
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
+                  {skillGroup.items.map((skill) => {
+                    const IconComponent = techIcons[skill];
+                    return (
+                      <Badge
+                        key={skill}
+                        variant="secondary"
+                        className="text-xs gap-1.5"
+                        data-testid={`badge-skill-${skill.toLowerCase().replace(/\s+/g, "-")}`}
+                      >
+                        {IconComponent && <IconComponent className="w-3 h-3" />}
+                        {skill}
+                      </Badge>
+                    );
+                  })}
                 </div>
               </CardContent>
             </Card>

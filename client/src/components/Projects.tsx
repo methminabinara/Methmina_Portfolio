@@ -59,13 +59,11 @@ export function Projects() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
             <Card
               key={project.title}
-              className={`overflow-hidden hover-elevate ${
-                project.featured ? "lg:col-span-2" : ""
-              }`}
+              className="overflow-hidden hover-elevate flex flex-col"
               data-testid={`card-project-${project.title.toLowerCase().replace(/\s+/g, "-")}`}
             >
               <div className="aspect-video overflow-hidden bg-muted">
@@ -75,12 +73,12 @@ export function Projects() {
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
-                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
+              <CardContent className="p-4 flex-1">
+                <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+                <p className="text-muted-foreground text-sm mb-3 leading-relaxed line-clamp-3">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5">
                   {project.tags.map((tag) => (
                     <Badge
                       key={tag}
@@ -93,7 +91,7 @@ export function Projects() {
                   ))}
                 </div>
               </CardContent>
-              <CardFooter className="p-6 pt-0 gap-3 flex-wrap">
+              <CardFooter className="p-4 pt-0 gap-2 flex-wrap">
                 <Button
                   variant="outline"
                   size="sm"
@@ -109,7 +107,7 @@ export function Projects() {
                   data-testid={`button-project-demo-${project.title.toLowerCase().replace(/\s+/g, "-")}`}
                 >
                   <ExternalLink className="w-4 h-4 mr-2" />
-                  Live Demo
+                  Demo
                 </Button>
               </CardFooter>
             </Card>
