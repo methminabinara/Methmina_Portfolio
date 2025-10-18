@@ -53,8 +53,8 @@ export function Projects() {
         "Personal Portfolio showcasing my projects, skills, and experience as a software engineer, built for performance and responsiveness.",
       image: portfolio,
       tags: ["React"],
-      github: "https://github.com/methminabinara/TrafficMonitor",
-      demo: "https://demo.com",
+      github: "https://github.com/methminabinara/methminabinara.github.io",
+      demo: "https://methminabinara.github.io/",
     },
   ];
 

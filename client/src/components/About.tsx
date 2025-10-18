@@ -7,44 +7,42 @@ export function About() {
     {
       category: "Programming Languages",
       techs: [
-        { name: "JavaScript", icon: SiJavascript },
-        { name: "TypeScript", icon: SiTypescript },
-        { name: "Python", icon: SiPython },
-        { name: "Java", icon: FaJava },
-        { name: "C", icon: SiC },
-        { name: "HTML/CSS", icon: SiHtml5 },
+        { name: "JavaScript", icon: SiJavascript, color: "text-yellow-500" },
+        { name: "TypeScript", icon: SiTypescript, color: "text-blue-500" },
+        { name: "Python", icon: SiPython, color: "text-blue-400" },
+        { name: "Java", icon: FaJava, color: "text-red-500" },
+        { name: "C", icon: SiC, color: "text-blue-600" },
+        { name: "HTML/CSS", icon: SiHtml5, color: "text-orange-500" },
       ],
     },
     {
       category: "Frameworks & Libraries",
       techs: [
-        { name: "React", icon: SiReact },
-        { name: "Next.js", icon: SiNextdotjs },
-        { name: "Node.js", icon: SiNodedotjs },
-        { name: "Express", icon: SiExpress },
-        { name: "Tailwind CSS", icon: SiTailwindcss },
+        { name: "React", icon: SiReact, color: "text-cyan-400" },
+        { name: "Next.js", icon: SiNextdotjs, color: "text-foreground" },
+        { name: "Node.js", icon: SiNodedotjs, color: "text-green-500" },
+        { name: "Express", icon: SiExpress, color: "text-foreground" },
+        { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-400" },
       ],
     },
     {
       category: "DevOps & Tools",
       techs: [
-        // { name: "Docker", icon: SiDocker },
-        // { name: "Kubernetes", icon: SiKubernetes },
-        { name: "Git", icon: SiGit },
+        { name: "Git", icon: SiGit, color: "text-orange-600" },
       ],
     },
     {
       category: "Databases",
       techs: [
-        { name: "PostgreSQL", icon: SiPostgresql },
-        { name: "MongoDB", icon: SiMongodb },
-        { name: "MySQL", icon: SiMysql },
+        { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-600" },
+        { name: "MongoDB", icon: SiMongodb, color: "text-green-500" },
+        { name: "MySQL", icon: SiMysql, color: "text-blue-500" },
       ],
     },
   ];
 
   return (
-    <section id="about" className="py-16 md:py-24 lg:py-32 px-6 md:px-8 lg:px-12">
+    <section id="about" className="py-16 md:py-24 lg:py-32 px-6 md:px-8 lg:px-12 bg-muted/30">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
@@ -66,11 +64,11 @@ export function About() {
                 {category.techs.map((tech) => (
                   <div
                     key={tech.name}
-                    className="flex flex-col items-center gap-3 hover-elevate rounded-lg p-4"
+                    className="flex flex-col items-center gap-3 hover-elevate rounded-lg p-4 group"
                     data-testid={`tech-${tech.name.toLowerCase().replace(/\s+/g, "-")}`}
                   >
-                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-primary/20 bg-card flex items-center justify-center hover:border-primary/40 transition-colors">
-                      <tech.icon className="w-10 h-10 md:w-12 md:h-12 text-primary" />
+                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-muted border-2 border-border flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <tech.icon className={`w-10 h-10 md:w-12 md:h-12 ${tech.color}`} />
                     </div>
                     <span className="text-sm font-medium text-muted-foreground">
                       {tech.name}
@@ -81,27 +79,6 @@ export function About() {
             </div>
           ))}
         </div>
-
-        {/* <div className="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div>
-            <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="text-years-experience">
-              5+
-            </div>
-            <div className="text-muted-foreground">Years Experience</div>
-          </div>
-          <div>
-            <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="text-projects-completed">
-              50+
-            </div>
-            <div className="text-muted-foreground">Projects Completed</div>
-          </div>
-          <div>
-            <div className="text-4xl md:text-5xl font-bold text-primary mb-2" data-testid="text-clients-served">
-              30+
-            </div>
-            <div className="text-muted-foreground">Clients Served</div>
-          </div>
-        </div> */}
       </div>
     </section>
   );
