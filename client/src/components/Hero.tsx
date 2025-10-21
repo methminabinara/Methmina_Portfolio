@@ -73,7 +73,7 @@ export function Hero() {
                 size="lg"
                 variant="outline"
                 onClick={() =>
-                  window.open("https://drive.google.com/file/d/1cDsfjE4lTZR0M6dh9uNwP0YmkugRIeR_/view?usp=sharing", "_blank")
+                  window.open("https://drive.google.com/file/d/1g0FQmfiejroG87nhR-5GikVbaSRQT_Mf/view?usp=sharing", "_blank")
                 }
                 data-testid="button-download-resume"
               >

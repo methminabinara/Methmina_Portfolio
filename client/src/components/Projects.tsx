@@ -52,9 +52,9 @@ export function Projects() {
       description:
         "Personal Portfolio showcasing my projects, skills, and experience as a software engineer, built for performance and responsiveness.",
       image: portfolio,
-      tags: ["React"],
-      github: "https://github.com/methminabinara/methminabinara.github.io",
-      demo: "https://methminabinara.github.io/",
+      tags: ["React", "Azure", "Cloudflare"],
+      github: "https://github.com/methminabinara/Methmina_Portfolio",
+      demo: "https://methminabinara.online/",
     },
   ];
 
@@ -117,8 +117,11 @@ export function Projects() {
                   data-testid={`button-project-demo-${project.title.toLowerCase().replace(/\s+/g, "-")}`}
                 >
                   <ExternalLink className="w-4 h-4 mr-2" />
-                  {project.title === "CourseFlow" ? "Live Site" : "Demo"}
+                  {project.title === "CourseFlow" || project.title === "Personal Portfolio Website"
+                    ? "Live Site"
+                    : "Demo"}
                 </Button>
+
 
               </CardFooter>
             </Card>

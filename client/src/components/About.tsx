@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { SiReact, SiTypescript, SiOpenjdk, SiNextdotjs, SiNodedotjs, SiExpress, SiPython, SiFastapi, SiPostgresql, SiMongodb, SiRedis, SiDocker, SiKubernetes, SiGit, SiJavascript, SiC, SiHtml5, SiTailwindcss, SiMysql } from "react-icons/si";
-import { FaJava } from "react-icons/fa";
+import { SiReact, SiTypescript, SiOpenjdk, SiNextdotjs, SiNodedotjs, SiExpress, SiPython, SiFastapi, SiPostgresql, SiMongodb, SiRedis, SiDocker, SiKubernetes, SiGit, SiJavascript, SiC, SiHtml5, SiTailwindcss, SiMysql, SiCloudflare } from "react-icons/si";
+import { FaJava, FaMicrosoft } from "react-icons/fa";
 
 export function About() {
   const techStack = [
@@ -26,8 +26,10 @@ export function About() {
       ],
     },
     {
-      category: "DevOps & Tools",
+      category: "Cloud & DevOps",
       techs: [
+        { name: "Microsoft Azure", icon: FaMicrosoft, color: "text-blue-500" },
+        { name: "Cloudflare", icon: SiCloudflare, color: "text-orange-500" },
         { name: "Git", icon: SiGit, color: "text-orange-600" },
       ],
     },
